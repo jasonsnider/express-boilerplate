@@ -4,6 +4,7 @@
   "display": "standalone",
   "background_color": "#000",
   "theme_color": "#21618C",
+  "start_url": "/?launcher=true",
   "icons": [
     {
       "src": "/img/logo-48.png",
@@ -25,6 +26,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": "/?launcher=true"
+  ]
 }
