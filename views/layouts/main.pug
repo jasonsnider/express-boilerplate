@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    base(href="/")
+    
+  body
+    block content
+
+    noscript#deferredStyles
+      link(rel='stylesheet' href='/dist/css/main.css' type="text/css")
+
+    script(src='/dist/js/main.js')
