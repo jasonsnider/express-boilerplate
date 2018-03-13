@@ -6,6 +6,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var merge = require('merge-stream');
 var scss = require('gulp-scss');
+var fs = require('fs');
 
 function version(){
   var now = new Date(),
@@ -31,6 +32,14 @@ function version(){
     return String(10000*Y + 100*m + d + '.' + H + i + s);
 }
 
+function setVersion(type) {
+  fs.writeFile(`./config/version.${type}.txt`, version(), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+  }); 
+}
+
 gulp.task('default', ['watch']);
 
 gulp.task('build-css', function(){
@@ -46,8 +55,11 @@ gulp.task('build-css', function(){
   ])
   . pipe(scss())
   . pipe(cleanCSS())
-  . pipe(concat('main.min.' + version() + '.css'))
+  . pipe(concat('main.min.css'))
   . pipe(gulp.dest('public/dist/css'));
+
+
+  setVersion('css');
 
   return merge(full, min);
 });
@@ -62,9 +74,11 @@ gulp.task('build-js', function() {
   var min = gulp.src([
     'public/src/js/main.js'
   ])
-  .pipe(concat('main.min.' +  version()  + '.js'))
+  .pipe(concat('main.min.js'))
   .pipe(uglify())
   .pipe(gulp.dest('public/dist/js'));
+
+  setVersion('js');
 
   return merge(full, min);
 });

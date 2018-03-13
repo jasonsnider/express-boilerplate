@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+if(process.env.NODE_ENV==='production'){
+  var config = require('./config/config.prod');
+}else{
+  var config = require('./config/config.dev');
+}
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -21,6 +27,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Set the front end asset versions
+app.locals = {
+  versions: {
+    css: config.versions.css,
+    js: config.versions.js
+  }
+};
 
 app.use('/', index);
 app.use('/users', users);
