@@ -2,6 +2,8 @@
   "short_name": "EPB",
   "name": "Express Boilerplate",
   "display": "standalone",
+  "background_color": "#000",
+  "theme_color": "#21618C",
   "icons": [
     {
       "src": "/img/logo-48.png",
@@ -17,6 +19,11 @@
       "src": "/img/logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "/img/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/"
