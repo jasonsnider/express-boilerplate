@@ -1,6 +1,7 @@
 {
   "short_name": "EPB",
   "name": "Express Boilerplate",
+  "display": "standalone",
   "icons": [
     {
       "src": "/img/logo-48.png",
