@@ -1,5 +1,5 @@
 # Express Boilerplate
-A starter package for ExpressJS the goal is to take _out of the box_ as close to production ready (optimizing performance, security and accessibility) as possible. We start with an out of the box solution that pushes Chrome's dev tool audits as close to 100% as possible, from there we move on to other common/opinionated practices. This is intended as a starting point to reduce the bruden of trivial yet common tasks.
+A starter package for ExpressJS the goal is to take _out of the box_ as close to production ready (optimizing performance, security and accessibility) as possible. We start with an out of the box solution that pushes Chrome's dev tool audits as close to 100% as possible, from there we move on to other common/opinionated practices. This is intended as a starting point to reduce the burden of trivial yet common tasks.
 
 ## Installation
 
